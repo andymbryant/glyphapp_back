@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-mongoose.connect('mongodb://localhost:27017/glyphdata');
+// mongoose.connect('mongodb://localhost:27017/glyphdata');
+mongoose.connect('mongodb://glyphapp:glyphapp@ds131826.mlab.com:31826/glyphdata')
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
