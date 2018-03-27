@@ -168,4 +168,9 @@ app.post('/save', function (req, res) {
     }
 })
 
-app.listen(3001, () => console.log('Example app listening on port 3001!'))
+app.set('port', (process.env.PORT || 3000));
+
+// start the server
+app.listen(app.get('port'), () => {
+    console.log(`Server is running on port ${app.get('port')}`);
+});
